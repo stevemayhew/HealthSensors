@@ -62,7 +62,7 @@ var DraggablePortlet = function () {
 
             var queries = _.pluck(withingsDataItems, 'ajax_query');
 
-            $.when.apply(queries).then(function() {
+            $.when.apply(this, queries).done(function() {
 
                 $.plot($("#fixed_main_portlet .panel-body"), withingsDataItems, {
                         series: {
